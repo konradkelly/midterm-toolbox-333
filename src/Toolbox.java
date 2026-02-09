@@ -1,5 +1,9 @@
 import java.util.Map;
+import java.util.HashMap;
 import java.util.Queue;
+import java.util.Deque;
+import java.util.Stack;
+
 
 public class Toolbox {
 
@@ -14,7 +18,13 @@ public class Toolbox {
     if (head == null) {
       throw new IllegalArgumentException("Head cannot be null.");
     }
-    return -1; 
+    int count = 0;
+    SingleNode current = head;
+    while (current != null) {
+      count++;
+      current = current.next;
+    }
+    return count; 
   }
 
   /**
