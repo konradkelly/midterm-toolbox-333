@@ -196,6 +196,9 @@ public class Toolbox {
         throw new IllegalArgumentException("Queue cannot be null");
       }
       
+      for (int i = 0; i < queue.size(); i++) {
+        queue.add(queue.remove() * 3);
+      }
     }
 
 
