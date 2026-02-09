@@ -195,7 +195,6 @@ public class Toolbox {
       if (queue == null) {
         throw new IllegalArgumentException("Queue cannot be null");
       }
-      
       for (int i = 0; i < queue.size(); i++) {
         queue.add(queue.remove() * 3);
       }
@@ -223,7 +222,10 @@ public class Toolbox {
     if (queue == null || k < 0) {
       throw new IllegalArgumentException("Queue cannot be null and k cannot be negative.");
     }
-    
+    k = k % queue.size();
+    while (k-- > 0) {
+      queue.add(queue.remove());
+    } 
   }
 
   /**
