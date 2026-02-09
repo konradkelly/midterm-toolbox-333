@@ -74,7 +74,18 @@ public class Toolbox {
     if (head == null) {
       throw new IllegalArgumentException("Head cannot be null.");
     }
-    return null; 
+    Map<Integer, Integer> map = new HashMap<>();
+    SingleNode current = head;
+    while (current != null) {
+      Integer key = current.data;
+      if (!map.containsKey(key)) {
+        map.put(key, 1);
+      } else {
+        map.put(key, map.get(key) + 1);
+      }
+      current = current.next;
+    }
+    return map;
   }
 
   /**
